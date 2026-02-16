@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("heart-bg.jpg");
+    background-image: url("yellow_heart_bg.png");
     font-family: "Pixelify Sans", sans-serif;
 }
 
@@ -38,6 +38,126 @@ body {
     inset: 0;
     justify-content: center;
     align-items: center;
+}
+
+/* First Valentine's page */
+#first-valentine-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-valentine-window {
+    width: 90vw;
+    max-width: 600px;
+}
+
+.first-valentine-window h1 {
+    max-width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.3;
+}
+
+.first-valentine-window.open {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.first-valentine-gif {
+    width: 220px;
+    height: auto;
+    margin: 16px 0 20px;
+}
+
+/* Reasons page */
+#reasons-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.reasons-window {
+    width: 90vw;
+    max-width: 600px;
+}
+
+.reasons-window.open {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* So I have a question for you... page */
+#question-teaser-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-teaser-window {
+    width: 90vw;
+    max-width: 600px;
+}
+
+.question-teaser-window h1 {
+    max-width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.question-teaser-duck {
+    width: 220px;
+    height: auto;
+    margin: 0 0 20px;
+}
+
+.question-teaser-window.open {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.reasons-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 24px;
+    font-size: 18px;
+    line-height: 2;
+    text-align: left;
+    max-width: 400px;
+}
+
+.reasons-list li::before {
+    content: "♥ ";
+    color: #e74c6c;
+}
+
+.next-btn {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
+    padding: 12px 28px;
+    background: rgba(255, 240, 240, 0.9);
+    border: 2px solid #e74c6c;
+    border-radius: 12px;
+    color: #c0395b;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.next-btn:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .letter-window{

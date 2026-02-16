@@ -1,23 +1,69 @@
 // Elements
 const envelope = document.getElementById("envelope-container");
+const firstValentine = document.getElementById("first-valentine-container");
+const reasons = document.getElementById("reasons-container");
+const questionTeaser = document.getElementById("question-teaser-container");
 const letter = document.getElementById("letter-container");
 const noBtn = document.querySelector(".no-btn");
 const yesBtn = document.querySelector(".btn[alt='Yes']");
+const firstValentineNextBtn = document.getElementById("first-valentine-next");
+const reasonsNextBtn = document.getElementById("reasons-next");
+const questionTeaserNextBtn = document.getElementById("question-teaser-next");
 
 const title = document.getElementById("letter-title");
 const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
 
-// Click Envelope
+// Play click sound (used on every button / envelope click)
+function playClickSound() {
+    const audio = new Audio("sounds/mouse_click.mp3");
+    audio.volume = 0.1;
+    audio.play().catch(() => {});
+}
 
+// Click Envelope → show First Valentine's page
 envelope.addEventListener("click", () => {
+    playClickSound();
     envelope.style.display = "none";
+    firstValentine.style.display = "flex";
+
+    setTimeout(() => {
+        document.querySelector(".first-valentine-window").classList.add("open");
+    }, 50);
+});
+
+// Click Next on First Valentine's → show Reasons page
+firstValentineNextBtn.addEventListener("click", () => {
+    playClickSound();
+    firstValentine.style.display = "none";
+    reasons.style.display = "flex";
+
+    setTimeout(() => {
+        document.querySelector(".reasons-window").classList.add("open");
+    }, 50);
+});
+
+// Click Next on Reasons → show "So I have a question..." page
+reasonsNextBtn.addEventListener("click", () => {
+    playClickSound();
+    reasons.style.display = "none";
+    questionTeaser.style.display = "flex";
+
+    setTimeout(() => {
+        document.querySelector(".question-teaser-window").classList.add("open");
+    }, 50);
+});
+
+// Click Next on question teaser → show Valentine question page
+questionTeaserNextBtn.addEventListener("click", () => {
+    playClickSound();
+    questionTeaser.style.display = "none";
     letter.style.display = "flex";
 
-    setTimeout( () => {
-        document.querySelector(".letter-window").classList.add("open");
-    },50);
+    setTimeout(() => {
+        document.querySelector("#letter-container .letter-window").classList.add("open");
+    }, 50);
 });
 
 // Logic to move the NO btn
@@ -45,6 +91,7 @@ noBtn.addEventListener("mouseover", () => {
 // yesBtn.style.transition = "transform 0.3s ease";
 
 // noBtn.addEventListener("click", () => {
+//     playClickSound();
 //     yesScale += 2;
 
 //     if (yesBtn.style.position !== "fixed") {
@@ -60,9 +107,10 @@ noBtn.addEventListener("mouseover", () => {
 // YES is clicked
 
 yesBtn.addEventListener("click", () => {
-    title.textContent = "Yippeeee!";
+    playClickSound();
+    title.textContent = "Yayyyyy";
 
-    catImg.src = "cat_dance.gif";
+    catImg.src = "gifs/duck_fart_heart.gif";
 
     document.querySelector(".letter-window").classList.add("final");
 
